@@ -34,7 +34,7 @@ def presupuesto_produccion():
 total_ventas = presupuesto_ventas()
 print(f"\nPresupuesto de Ventas: ${total_ventas:.2f}\n")
 
-saldo_31_dic_2022, ventas_2023, total_clientes_2023, cobranza_2022, cobranza_2023, total_entradas_2023, saldo_2023 = saldo_clientes_entradas()
+saldo_31_dic_2022, ventas_2023, total_clientes_2023, cobranza_2022, cobranza_2023, total_entradas_2023, saldo_2023 = saldo_clientes()
 
 print(f"\nSaldo de Clientes al 31 de diciembre de 2022: ${saldo_31_dic_2022:.2f}")
 print(f"Ventas 2023: ${ventas_2023:.2f}")
