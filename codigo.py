@@ -411,3 +411,248 @@ tabla = tabulate(datos_determinacion_saldo_proveedores_flujo_salida, headers=["D
 # Mostrar la tabla
 print("Determinacion del saldo de Proveedores y Flujo de Salidas")
 print(tabla)
+
+from tabulate import tabulate
+
+# Tabla 7. Presupuesto de mano de obra directa
+def presupuesto_mod_directa(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return presupuesto_mod_directa(mensaje)
+  
+# Pedir los datos necesarios del 1er. semestre para el presupuesto de mdo directa
+print("\n1er SEMESTRE")
+print("\nPRODUCTO 1")    
+unidades_producir1_1 = float(input('Ingrese unidades a producir en el semestre 1: '))
+horas_requeridas1_1 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 1: '))
+cuota_por_hora1_1 = float(input('Ingrese la cantidad de la cuota por hora del semestre 1: '))
+print("\nPRODUCTO 2")
+unidades_producir2_1 = float(input('Ingrese unidades a producir en el semestre 1: '))
+horas_requeridas2_1 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 1: '))
+cuota_por_hora2_1 = float(input('Ingrese la cantidad de la cuota por hora del semestre 1: '))
+print("\nPRODUCTO 3")    
+unidades_producir3_1 = float(input('Ingrese unidades a producir en el semestre 1: '))
+horas_requeridas3_1 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 1: '))
+cuota_por_hora3_1 = float(input('Ingrese la cantidad de la cuota por hora del semestre 1: '))
+
+# Calcular los valores del 1er. semestre para el presupuesto mdo directa
+total_horas1_1 = unidades_producir1_1 * horas_requeridas1_1
+total_horas2_1 = unidades_producir2_1 * horas_requeridas2_1
+total_horas3_1 = unidades_producir3_1 * horas_requeridas3_1
+
+importe_mod1_1 = total_horas1_1 * cuota_por_hora1_1
+importe_mod2_1 = total_horas2_1 * cuota_por_hora2_1
+importe_mod3_1 = total_horas3_1 * cuota_por_hora3_1
+
+total_requeridas_sem1 = total_horas1_1 + total_horas2_1 + total_horas3_1
+
+total_mod_sem1 = importe_mod1_1 + importe_mod2_1 + importe_mod3_1
+
+# Pedir los datos necesarios del 2do. semestre para el presupuesto de mdo directa
+print("\n2do SEMESTRE")
+print("\nPRODUCTO 1")    
+unidades_producir1_2 = float(input('Ingrese unidades a producir en el semestre 2: '))
+horas_requeridas1_2 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 2: '))
+cuota_por_hora1_2 = float(input('Ingrese la cantidad de la cuota por hora del semestre 2: '))
+print("\nPRODUCTO 2")
+unidades_producir2_2 = float(input('Ingrese unidades a producir en el semestre 2: '))
+horas_requeridas2_2 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 2: '))
+cuota_por_hora2_2 = float(input('Ingrese la cantidad de la cuota por hora del semestre 2: '))
+print("\nPRODUCTO 3")    
+unidades_producir3_2 = float(input('Ingrese unidades a producir en el semestre 2: '))
+horas_requeridas3_2 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 2: '))
+cuota_por_hora3_2 = float(input('Ingrese la cantidad de la cuota por hora del semestre 2: '))
+
+# Calcular los valores del 2do. semestre para el presupuesto mod directa
+total_horas1_2 = unidades_producir1_2 * horas_requeridas1_2
+total_horas2_2 = unidades_producir2_2 * horas_requeridas2_2
+total_horas3_2 = unidades_producir3_2 * horas_requeridas3_2
+
+importe_mod1_2 = total_horas1_2 * cuota_por_hora1_2
+importe_mod2_2 = total_horas2_2 * cuota_por_hora2_2
+importe_mod3_2 = total_horas3_2 * cuota_por_hora3_2
+total_requeridas_sem2 = total_horas1_2 + total_horas2_2 + total_horas3_2
+
+total_mod_sem2 = importe_mod1_2 + importe_mod2_2 + importe_mod3_2
+
+#Pedir los datos del año para el presupuesto de mod directa
+print("\nAÑO")
+print("\nPRODUCTO 1")    
+unidades_producir1_3 = float(input('Ingrese unidades a producir en el semestre 3: '))
+horas_requeridas1_3 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 1: '))
+print("\nPRODUCTO 2")
+unidades_producir2_3 = float(input('Ingrese unidades a producir en el semestre 3: '))
+horas_requeridas2_3 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 1: '))
+print("\nPRODUCTO 3")    
+unidades_producir3_3 = float(input('Ingrese unidades a producir en el semestre 3: '))
+horas_requeridas3_3 = float(input('Ingrese cantidad de horas requeridas por unidad del semestre 1: '))
+
+# Calcular los valores del año para el presupuesto mod directa
+total_horas1_3 = unidades_producir1_3 * horas_requeridas1_3
+total_horas2_3 = unidades_producir2_3 * horas_requeridas2_3
+total_horas3_3 = unidades_producir3_3 * horas_requeridas3_3
+
+importe_mod1_3 = importe_mod1_1 + importe_mod1_2
+importe_mod2_3 = importe_mod2_1 + importe_mod2_2
+importe_mod3_3 = importe_mod3_1 + importe_mod3_2
+
+total_requeridas_año = total_horas1_3 + total_horas2_3 + total_horas3_3
+total_mod_año = importe_mod1_3 + importe_mod2_3 + importe_mod3_3
+
+# Crear una lista de listas con los datos del presupuesto de mod directa
+datos_presupuesto_mod_directa = [
+    ["PRODUCTO 1", "", "", ""], 
+    ["Unidades a producir", unidades_producir1_1, unidades_producir1_2, unidades_producir1_3], 
+    ["Horas requeridas por unidad", horas_requeridas1_1, horas_requeridas1_2, horas_requeridas1_3], 
+    ["Total de horas requeridas por unidad", total_horas1_1, total_horas1_2, total_horas1_3], 
+    ["Cuota por hora", cuota_por_hora1_1, cuota_por_hora1_2, ""], 
+    ["Importe de M.O.D", importe_mod1_1, importe_mod1_2, importe_mod1_3], 
+    ["PRODUCTO 2", "", "", ""], 
+    ["Unidades a producir", unidades_producir2_1, unidades_producir2_2, unidades_producir2_3], 
+    ["Horas requeridas por unidad", horas_requeridas2_1, horas_requeridas2_2, horas_requeridas2_3], 
+    ["Total de horas requeridas por unidad", total_horas2_1, total_horas2_2, total_horas2_3], 
+    ["Cuota por hora", cuota_por_hora2_1, cuota_por_hora2_2, ""], 
+    ["Importe de M.O.D", importe_mod2_1, importe_mod2_2, importe_mod2_3],
+    ["PRODUCTO 3", "", "", ""], 
+    ["Unidades a producir", unidades_producir3_1, unidades_producir3_2, unidades_producir3_3], 
+    ["Horas requeridas por unidad", horas_requeridas3_1, horas_requeridas3_2, horas_requeridas3_3], 
+    ["Total de horas requeridas por unidad", total_horas3_1, total_horas3_2, total_horas3_3], 
+    ["Cuota por hora", cuota_por_hora3_1, cuota_por_hora3_2, ""], 
+    ["Importe de M.O.D", importe_mod3_1, importe_mod3_2, importe_mod3_3], 
+    ["Total de horas requeridas por semestre", total_requeridas_sem1, total_requeridas_sem2, total_requeridas_año], 
+    ["Total de M.O.D por semestre", total_mod_sem1, total_mod_sem2, total_mod_año]
+    ]
+
+tabla = tabulate(datos_presupuesto_mod_directa, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+    # Mostrar la tabla
+print("Presupuesto de MOD directa")
+print(tabla)
+
+from tabulate import tabulate
+
+# Tabla 8. Presupuesto de gastos indirectos de fabricacion
+def presupuesto_gastos_indirectos_fabricacion(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return presupuesto_gastos_indirectos_fabricacion(mensaje)
+
+# Pedir los datos necesarios para el presupuesto de gastos indirectos de fabricacion
+print("\n1er SEMESTRE")
+depreciacion1= float(input('Ingrese monto de depreciacion: '))
+seguros1 = float(input('Ingrese monto para seguros: '))
+mantenimiento1 = float(input('Ingrese monto de mantenimiento: '))
+energeticos1 = float(input('Ingrese monto de energeticos: '))
+varios1 = float(input('Ingrese monto de varios: '))
+
+# Calcular los valores del 1er. semestre para el presupuesto de gastos indirectos de fabricacion
+total_gif1 = depreciacion1 + seguros1 + mantenimiento1 + energeticos1 + varios1
+
+print("\n2do SEMESTRE")
+depreciacion2 = float(input('Ingrese monto de depreciacion: '))
+seguros2 = float(input('Ingrese monto para seguros: '))
+mantenimiento2 = float(input('Ingrese monto de mantenimiento: '))
+energeticos2 = float(input('Ingrese monto de energeticos: '))
+varios2 = float(input('Ingrese monto de varios: '))
+
+# Calcular los valores del 2do. semestre para el presupuesto de gastos indirectos de fabricacion
+total_gif1 = depreciacion1 + seguros1 + mantenimiento1 + energeticos1 + varios1
+
+print("\nAÑO")
+depreciacion3 = float(input('Ingrese monto de depreciacion: '))
+seguros3 = float(input('Ingrese monto para seguros: '))
+mantenimiento3 = float(input('Ingrese monto de mantenimiento: '))
+energeticos3 = float(input('Ingrese monto de energeticos: '))
+varios3 = float(input('Ingrese monto de varios: '))
+
+# Calcular los valores del año para el presupuesto de gastos indirectos de fabricacion
+total_gif1 = depreciacion1 + seguros1 + mantenimiento1 + energeticos1 + varios1
+total_gif2 = depreciacion2 + seguros2 + mantenimiento2 + energeticos2 + varios2
+total_gif3 = depreciacion3 + seguros3 + mantenimiento3 + energeticos3 + varios3
+
+# Coeficiente para determinar el costo por hora de Gastos Indirectos de Fabricacion 
+total_gif_final = total_gif3
+
+total_horas_mod_anual = float(input('Ingrese la cantidad del total horas M.O.D anual: '))
+
+# Calcular los valores del costo por hora G.I.F
+costo_hora_gif = total_gif_final / total_horas_mod_anual
+
+# Crear una lista de listas con los datos del presupuesto de mod directa
+datos_presupuesto_gastos_indirectos_fabricacion = [
+  ["Depreciacion", depreciacion1, depreciacion2, depreciacion3], 
+  ["Seguros", seguros1, seguros2, seguros3], 
+  ["Mantenimiento", mantenimiento1, mantenimiento2, mantenimiento3], 
+  ["Energeticos", energeticos1, energeticos2, energeticos3],  
+  ["Varios", varios1, varios2, varios3], 
+  ["Total G.I.F por semestre", total_gif1, total_gif2, total_gif3], 
+  ["Coeficiente para determinar el costo por hora de Gastos Indirectos de Fabricacion", "", "", ""], 
+  ["Total de G.I.F", total_gif1, total_gif2, total_gif3], 
+  ["Total horas M.O.D Anual","", "", total_horas_mod_anual], 
+  ["Costo por hora de G.I.F", "", "", costo_hora_gif]
+]
+
+tabla = tabulate(datos_presupuesto_gastos_indirectos_fabricacion, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+    # Mostrar la tabla
+print("Presupuesto de Gastos Indirectos de Fabricacion")
+print(tabla)
+
+from tabulate import tabulate
+
+# Tabla 9. Presupuesto de gastos de operacion
+def presupuesto_gastos_operacion(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return presupuesto_gastos_operacion(mensaje)
+
+# Pedir los datos necesarios para el presupuesto de gastos de operacion
+print("\n1er SEMESTRE")
+depreciacion1 = float(input('Ingrese monto de depreciacion del semestre 1: '))
+sueldos_y_salarios1 = float(input('Ingrese monto de sueldos y salarios del semestre 1: '))
+comisiones1 = float(input('Ingrese la cantidad del total de ventas del 1er semestre de su presupuesto de ventas: ')) 
+varios1O = float(input('Ingrese monto de varios del semestre 1: '))
+intereses_prestamo1 = float(input('Ingrese monto de intereses del prestamo del semestre 1: '))
+print("\n2do SEMESTRE")
+depreciacion2 = float(input('Ingrese monto de depreciacion del semestre 2: '))
+sueldos_y_salarios2 = float(input('Ingrese monto de sueldos y salarios del semestre 2: '))
+comisiones2 = float(input('Ingrese la cantidad del total de ventas del 2do semestre de su presupuesto de ventas: ')) * 0.01
+varios2O = float(input('Ingrese monto de varios del semestre 2: '))
+intereses_prestamo2 = float(input('Ingrese monto de intereses del prestamo del semestre 2: '))
+print("\nAÑO")
+depreciacion3 = float(input('Ingrese monto de depreciacion del semestre 3: '))
+sueldos_y_salarios3 = float(input('Ingrese monto de sueldos y salarios del semestre 3: '))
+comisiones3 = float(input('Ingrese la cantidad del total de ventas del año de su presupuesto de ventas: ')) * 0.01
+varios3O = float(input('Ingrese monto de varios del semestre 3: '))
+intereses_prestamo3 = float(input('Ingrese monto de intereses del prestamo del semestre 3: '))
+
+# Calcular los valores para el presupuesto de gastos de operaciom
+total_comisiones1 = comisiones1 * 0.01
+total_comisiones2 = comisiones2 * 0.01
+total_comisiones3 = comisiones3 * 0.01
+
+total_gastos_operacion1 = depreciacion1 + sueldos_y_salarios1 + total_comisiones1 + varios1O + intereses_prestamo1
+total_gastos_operacion2 = depreciacion2 + sueldos_y_salarios2 + total_comisiones2 + varios2O + intereses_prestamo2
+total_gastos_operacion3 = depreciacion3 + sueldos_y_salarios3 + total_comisiones3 + varios3O + intereses_prestamo3
+
+# Crear una lista de listas con los datos del presupuesto de mod directa
+datos_presupuesto_gastos_operacion = [
+  ["Depreciacion", depreciacion1, depreciacion2, depreciacion3], 
+  ["Sueldos y salarios", sueldos_y_salarios1, sueldos_y_salarios2, sueldos_y_salarios3], 
+  ["Comisiones", total_comisiones1, total_comisiones2, total_comisiones3], 
+  ["Varios", varios1O, varios2O, varios3O], 
+  ["Intereses del prestamo", intereses_prestamo1, intereses_prestamo2, intereses_prestamo3], 
+  ["Total de Gastos de Operacion", total_gastos_operacion1, total_gastos_operacion2, total_gastos_operacion3]
+]
+
+tabla = tabulate(datos_presupuesto_gastos_operacion, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+        # Mostrar la tabla
+print("Presupuesto de Gastos de Operacion")
+print(tabla)
