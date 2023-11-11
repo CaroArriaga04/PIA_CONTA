@@ -64,7 +64,7 @@ datos_presupuesto_ventas= [
 ]
 
 # Impresion de datos de presupuesto de requerimiento de materiales - Tabla 1
-tabla = tabulate(datos_presupuesto_ventas, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+tabla = tabulate(datos_presupuesto_ventas, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="fancy_grid")
 # Mostrar la tabla
 print("Presupuesto de ventas")
 print(tabla)
@@ -97,7 +97,7 @@ datos_saldo_clientes= [
 ]
 
 # Impresion de datos de presupuesto de requerimiento de materiales - Tabla 2
-tabla = tabulate(datos_saldo_clientes, headers=["Descripción", "Importe", "Total"], tablefmt="grid")
+tabla = tabulate(datos_saldo_clientes, headers=["Descripción", "Importe", "Total"], tablefmt="fancy_grid")
 # Mostrar la tabla
 print("Saldo de Clientes")
 print(tabla)
@@ -176,7 +176,7 @@ datos_presupuesto_produccion= [
 ]
 
 # Impresion de datos de presupuesto de requerimiento de materiales - Tabla 3
-tabla = tabulate(datos_presupuesto_produccion, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+tabla = tabulate(datos_presupuesto_produccion, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="fancy_grid")
 # Mostrar la tabla
 print("Presupuesto de Producción")
 print(tabla)
@@ -335,7 +335,8 @@ datos_presupuesto_requerimiento_de_materiales= [
 ]
 
 # Impresion de datos de presupuesto de requerimiento de materiales - Tabla 4
-tabla = tabulate(datos_presupuesto_requerimiento_de_materiales, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+tabla = tabulate(datos_presupuesto_requerimiento_de_materiales, headers=["Producto", "1er. Semestre", 
+                                                                         "2do. Semestre", "Total Año"], tablefmt="fancy_grid")
 # Mostrar la tabla
 print("Presupuesto de Requerimiento de Materiales")
 print(tabla)
@@ -464,7 +465,8 @@ datos_presupuesto_compra_de_materiales= [
 ]
 
 # Impresion de datos de determinacion del saldo de proveedores y flujo de salida - Tabla 6
-tabla = tabulate(datos_presupuesto_compra_de_materiales, headers=["", "1er. Semestre", "2do. Semestre", "Total año"], tablefmt="grid")
+tabla = tabulate(datos_presupuesto_compra_de_materiales, headers=["", "1er. Semestre", "2do. Semestre", 
+                                                                  "Total año"], tablefmt="fancy_grid")
 # Mostrar la tabla
 print("\nPresupuesto compra de materiales")
 print(tabla)
@@ -500,7 +502,7 @@ datos_determinacion_saldo_proveedores_flujo_salida= [
 ]
 
 # Impresion de datos de determinacion del saldo de proveedores y flujo de salida - Tabla 6
-tabla = tabulate(datos_determinacion_saldo_proveedores_flujo_salida, headers=["Descripcion", "Importe", "Total"], tablefmt="grid")
+tabla = tabulate(datos_determinacion_saldo_proveedores_flujo_salida, headers=["Descripcion", "Importe", "Total"], tablefmt="fancy_grid")
 # Mostrar la tabla
 print("Determinacion del saldo de Proveedores y Flujo de Salidas")
 print(tabla)
@@ -617,7 +619,7 @@ datos_presupuesto_mod_directa = [
     ["Total de M.O.D por semestre", total_mod_sem1, total_mod_sem2, total_mod_año]
     ]
 
-tabla = tabulate(datos_presupuesto_mod_directa, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+tabla = tabulate(datos_presupuesto_mod_directa, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="fancy_grid")
     # Mostrar la tabla
 print("Presupuesto de MOD directa")
 print(tabla)
@@ -686,7 +688,8 @@ datos_presupuesto_gastos_indirectos_fabricacion = [
   ["Costo por hora de G.I.F", "", "", costo_hora_gif]
 ]
 
-tabla = tabulate(datos_presupuesto_gastos_indirectos_fabricacion, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+tabla = tabulate(datos_presupuesto_gastos_indirectos_fabricacion, headers=["Producto", "1er. Semestre", 
+                                                                           "2do. Semestre", "Total Año"], tablefmt="fancy_grid")
     # Mostrar la tabla
 print("Presupuesto de Gastos Indirectos de Fabricacion")
 print(tabla)
@@ -739,7 +742,8 @@ datos_presupuesto_gastos_operacion = [
   ["Total de Gastos de Operacion", total_gastos_operacion1, total_gastos_operacion2, total_gastos_operacion3]
 ]
 
-tabla = tabulate(datos_presupuesto_gastos_operacion, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
+tabla = tabulate(datos_presupuesto_gastos_operacion, headers=["Producto", "1er. Semestre",
+                                                               "2do. Semestre", "Total Año"], tablefmt="fancy_grid")
 # Mostrar la tabla
 print("Presupuesto de Gastos de Operacion")
 print(tabla)
