@@ -2,41 +2,50 @@ from tabulate import tabulate
 
 # Presupuesto maestro
 # Tabla 1: Presupuesto de Ventas
-def presupuesto_ventas():
-    unidades_vender_1erp1sem = int(input("Ingrese la cantidad de unidades a vender del primer semestre: "))
-    precio_venta_1erp1sem = float(input("Ingrese el precio de venta por unidad del primer semestre: "))
-    total_ventas_1erp1sem = unidades_vender_1ersem * precio_venta_1ersem
-    
-    unidades_vender_1erp2sem = int(input("Ingrese la cantidad de unidades a vender del segundo semestre: "))
-    precio_venta_1erp2sem = float(input("Ingrese el precio de venta por unidad del segundo semestre: "))
-    total_ventas_1erp2sem = unidades_vender_2dosem * precio_venta_2dosem
-    
-    total_ventas_1p = total_ventas_1erp1sem + total_ventas_1erp2sem
+def presupuesto_ventas(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return presupuesto_ventas(mensaje)
 
-    unidades_vender_2dop1sem = int(input("Ingrese la cantidad de unidades a vender del primer semestre: "))
-    precio_venta_2dop1sem = float(input("Ingrese el precio de venta por unidad del primer semestre: "))
-    total_ventas_2dop1sem = unidades_vender_1ersem * precio_venta_1ersem
-    
-    unidades_vender_2dop2sem = int(input("Ingrese la cantidad de unidades a vender del segundo semestre: "))
-    precio_venta_2dop2sem = float(input("Ingrese el precio de venta por unidad del segundo semestre: "))
-    total_ventas_2dop2sem = unidades_vender_2dosem * precio_venta_2dosem
-    
-    total_ventas_2p = total_ventas_2dop1sem + total_ventas_2dop2sem
+print("\nPRODUCTO 1")
+unidades_vender_1erp1sem = presupuesto_ventas("Ingrese la cantidad de unidades a vender del primer semestre: ")
+precio_venta_1erp1sem = presupuesto_ventas("Ingrese el precio de venta por unidad del primer semestre: ")
+total_ventas_1erp1sem = unidades_vender_1erp1sem * precio_venta_1erp1sem
 
-    unidades_vender_3erp1sem = int(input("Ingrese la cantidad de unidades a vender del primer semestre: "))
-    precio_venta_3erp1sem = float(input("Ingrese el precio de venta por unidad del primer semestre: "))
-    total_ventas_3erp1sem = unidades_vender_1ersem * precio_venta_1ersem
-    
-    unidades_vender_3erp2sem = int(input("Ingrese la cantidad de unidades a vender del segundo semestre: "))
-    precio_venta_3erp2sem = float(input("Ingrese el precio de venta por unidad del segundo semestre: "))
-    total_ventas_3erp2sem = unidades_vender_3er1sem * precio_venta_3erp2sem
-    
-    total_ventas_3p = total_ventas_3erp1sem + total_ventas_3erp2sem
-    total_ventas_1sem = total_ventas_1erp1sem + total_ventas_2dop1sem + total_ventas_3erp1sem
-    total_ventas_2sem = total_ventas_1erp2sem + total_ventas_2dop2sem + total_ventas_3erp2sem
-    total_ventas_año = total_ventas_1sem + total_ventas_2sem 
-    
-    return total_ventas_1p, total_ventas_2p, total_ventas_3p
+unidades_vender_1erp2sem = presupuesto_ventas("Ingrese la cantidad de unidades a vender del segundo semestre: ")
+precio_venta_1erp2sem = presupuesto_ventas("Ingrese el precio de venta por unidad del segundo semestre: ")
+total_ventas_1erp2sem = unidades_vender_1erp2sem * precio_venta_1erp2sem
+
+total_ventas_1p = total_ventas_1erp1sem + total_ventas_1erp2sem
+
+print("\nPRODUCTO 2")
+unidades_vender_2dop1sem = presupuesto_ventas("Ingrese la cantidad de unidades a vender del primer semestre: ")
+precio_venta_2dop1sem = presupuesto_ventas("Ingrese el precio de venta por unidad del primer semestre: ")
+total_ventas_2dop1sem = unidades_vender_2dop1sem * precio_venta_2dop1sem
+
+unidades_vender_2dop2sem = presupuesto_ventas("Ingrese la cantidad de unidades a vender del segundo semestre: ")
+precio_venta_2dop2sem = presupuesto_ventas("Ingrese el precio de venta por unidad del segundo semestre: ")
+total_ventas_2dop2sem = unidades_vender_2dop2sem * precio_venta_2dop2sem
+
+total_ventas_2p = total_ventas_2dop1sem + total_ventas_2dop2sem
+
+print("\nPRODUCTO 3")
+unidades_vender_3erp1sem = presupuesto_ventas("Ingrese la cantidad de unidades a vender del primer semestre: ")
+precio_venta_3erp1sem = presupuesto_ventas("Ingrese el precio de venta por unidad del primer semestre: ")
+total_ventas_3erp1sem = unidades_vender_3erp1sem * precio_venta_3erp1sem
+
+unidades_vender_3erp2sem = presupuesto_ventas("Ingrese la cantidad de unidades a vender del segundo semestre: ")
+precio_venta_3erp2sem = presupuesto_ventas("Ingrese el precio de venta por unidad del segundo semestre: ")
+total_ventas_3erp2sem = unidades_vender_3erp2sem * precio_venta_3erp2sem
+
+total_ventas_3p = total_ventas_3erp1sem + total_ventas_3erp2sem
+total_ventas_1sem = total_ventas_1erp1sem + total_ventas_2dop1sem + total_ventas_3erp1sem
+total_ventas_2sem = total_ventas_1erp2sem + total_ventas_2dop2sem + total_ventas_3erp2sem
+total_ventas_año = total_ventas_1sem + total_ventas_2sem 
+  
 # Crear una lista de listas con los datos del presupuesto de requerimiento de materiales
 datos_presupuesto_ventas= [
     ["PRODUCTO 1", "", "", ""],
@@ -44,11 +53,11 @@ datos_presupuesto_ventas= [
     ["Precio de venta", precio_venta_1erp1sem , precio_venta_1erp2sem , ""],
     ["Importe de venta", total_ventas_1erp1sem , total_ventas_1erp2sem , total_ventas_1p],
     ["PRODUCTO 2", "", "", ""],
-    ["Unidades a vender", unidades_vender_2dop1sem, unidades_vender_2dop2sem , ¨¨],
+    ["Unidades a vender", unidades_vender_2dop1sem, unidades_vender_2dop2sem , ""],
     ["Precio de venta", precio_venta_2dop1sem , precio_venta_2dop2sem , ""],
     ["Importe de venta", total_ventas_2dop1sem , total_ventas_2dop2sem, total_ventas_2p],
     ["PRODUCTO 3", "", "", ""],
-    ["Unidades a vender", unidades_vender_3erp1sem, unidades_vender3erp2sem, ¨¨],
+    ["Unidades a vender", unidades_vender_3erp1sem, unidades_vender_3erp2sem, ""],
     ["Precio de venta", precio_venta_3erp1sem, precio_venta_3erp2sem, ""],
     ["Importe de venta", total_ventas_3erp1sem, total_ventas_3erp2sem, total_ventas_3p],
     ["Total de ventas por semestre", total_ventas_1sem , total_ventas_2sem, total_ventas_año ]
@@ -171,8 +180,6 @@ tabla = tabulate(datos_presupuesto_produccion, headers=["Producto", "1er. Semest
 # Mostrar la tabla
 print("Presupuesto de Producción")
 print(tabla)
-
-from tabulate import tabulate
 
 # Tabla 4: Presupuesto de Requerimiento de Materiales
 def presupuesto_requerimiento_de_materiales(mensaje):
@@ -498,8 +505,6 @@ tabla = tabulate(datos_determinacion_saldo_proveedores_flujo_salida, headers=["D
 print("Determinacion del saldo de Proveedores y Flujo de Salidas")
 print(tabla)
 
-from tabulate import tabulate
-
 # Tabla 7. Presupuesto de mano de obra directa
 def presupuesto_mod_directa(mensaje):
   try:
@@ -617,8 +622,6 @@ tabla = tabulate(datos_presupuesto_mod_directa, headers=["Producto", "1er. Semes
 print("Presupuesto de MOD directa")
 print(tabla)
 
-from tabulate import tabulate
-
 # Tabla 8. Presupuesto de gastos indirectos de fabricacion
 def presupuesto_gastos_indirectos_fabricacion(mensaje):
   try:
@@ -688,8 +691,6 @@ tabla = tabulate(datos_presupuesto_gastos_indirectos_fabricacion, headers=["Prod
 print("Presupuesto de Gastos Indirectos de Fabricacion")
 print(tabla)
 
-from tabulate import tabulate
-
 # Tabla 9. Presupuesto de gastos de operacion
 def presupuesto_gastos_operacion(mensaje):
   try:
@@ -739,6 +740,6 @@ datos_presupuesto_gastos_operacion = [
 ]
 
 tabla = tabulate(datos_presupuesto_gastos_operacion, headers=["Producto", "1er. Semestre", "2do. Semestre", "Total Año"], tablefmt="grid")
-        # Mostrar la tabla
+# Mostrar la tabla
 print("Presupuesto de Gastos de Operacion")
 print(tabla)
