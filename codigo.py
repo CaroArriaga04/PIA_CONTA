@@ -748,7 +748,8 @@ tabla = tabulate(datos_presupuesto_gastos_operacion, headers=["Producto", "1er. 
 print("Presupuesto de Gastos de Operacion")
 print(tabla)
 
-#Tabla 10
+
+#Tabla 10:Vanessa
 def costo_unitario(mensaje):
   try:
      dato = float(input(mensaje))
@@ -757,6 +758,8 @@ def costo_unitario(mensaje):
     print("Por favor, ingresa un número válido.")
     return costo_unitario(mensaje)
 
+
+#Debe estar definida arriba y ser float no funcion costo_hora_gif=3.17
 print("\nProducto 1")
 
 print("\nCosto")
@@ -781,7 +784,7 @@ costo_unitario_obra = (mano_obra_costo*mano_obra_cantidad)
 costo_unitario_gastos = (costo_hora_gif*mano_obra_cantidad)
 
 costo_unitario_total = (costo_unitario_a + costo_unitario_b + costo_unitario_c + costo_unitario_obra + costo_unitario_gastos )
-print(costo_unitario_total)
+
 
 print("\nProducto 2")
 
@@ -806,7 +809,7 @@ costo_unitario_c2=(material_c2_costo*material_c2_cantidad)
 costo_unitario_obra2 = (mano_obra2_costo*mano_obra2_cantidad)
 costo_unitario_gastos2 = (costo_hora_gif*mano_obra2_cantidad)
 costo_unitario_total2 = (costo_unitario_a2 + costo_unitario_b2 + costo_unitario_c2 + costo_unitario_obra2 + costo_unitario_gastos2 )
-print(costo_unitario_total2)
+
 
 print('\nProducto 3')
 
@@ -831,7 +834,6 @@ costo_unitario_c3=(material_c3_costo*material_c3_cantidad)
 costo_unitario_obra3 = (mano_obra3_costo*mano_obra3_cantidad)
 costo_unitario_gastos3 = (costo_hora_gif*mano_obra3_cantidad)
 costo_unitario_total3 = (costo_unitario_a3 + costo_unitario_b3 + costo_unitario_c3 + costo_unitario_obra3 + costo_unitario_gastos3 )
-print(costo_unitario_total3)
 
 from tabulate import tabulate
 total_costo_unitario = [
@@ -855,7 +857,7 @@ total_costo_unitario = [
   ["Costo Unitario",costo_unitario_total3 ],
 ]
 print("Determinacion del Costo Unitario de Productos Terminados")
-tabla =(tabulate(total_costo_unitario, headers=["Producto", "Costo", "Cantidad", "Costo unitario Total"], tablefmt="pipe"))
+tabla =(tabulate(total_costo_unitario, headers=["Producto", "Costo", "Cantidad", "Costo unitario Total"], tablefmt="fancy_grid"))
 print (tabla)
 
 #Tabla 11:Validacion de inventarios Finales
@@ -884,7 +886,6 @@ costo_unitario_tb=(material_b_unidades*material_b_unitario)
 costo_unitario_tc=(material_c_unidades*material_c_unitario)
 
 invent_final = (costo_unitario_ta+costo_unitario_tb+costo_unitario_tc)
-print(invent_final)
 
 
 print('\nInventario Final de Productos terminados')
@@ -900,7 +901,7 @@ costo_unitario_t3=(material_3_unidades*costo_unitario_total3)
 
 
 total_de_costos=(costo_unitario_t1+costo_unitario_t2+costo_unitario_t3)
-print(total_de_costos)
+
 
 
 from tabulate import tabulate
@@ -919,8 +920,8 @@ total_costo_unitario2 = [
   ["Inventario Final de Productos Terminados ",total_de_costos],
 
 ]
-print(tabulate(total_costo_unitario1, headers=["Descripcion", "Unidades", "Costo Unitario", "Costo Total"], tablefmt="pipe"))
-print(tabulate(total_costo_unitario2, headers=["Descripcion", "Unidades", "Costo Unitario", "Costo Total"], tablefmt="pipe"))
+print(tabulate(total_costo_unitario1, headers=["Descripcion", "Unidades", "Costo Unitario", "Costo Total"], tablefmt="fancy_grid"))
+print(tabulate(total_costo_unitario2, headers=["Descripcion", "Unidades", "Costo Unitario", "Costo Total"], tablefmt="fancy_grid"))
 
 #Tabla 12 Estado de Costo de Producción y Ventas:
 def estado_costo_ventas(mensaje):
@@ -956,9 +957,7 @@ Estado_Costo_P_V = [
   ["Inventario Final de Productos Terminados ",total_de_costos],
   [" Costo de Ventas",costo_ventas_fin],
 ]
-print(tabulate(Estado_Costo_P_V, headers=["Presupuesto del X al X de 20XX"], tablefmt="pipe"))
-
-
+print(tabulate(Estado_Costo_P_V, headers=["Presupuesto del X al X de 20XX"], tablefmt="fancy_grid"))
 
 
 
