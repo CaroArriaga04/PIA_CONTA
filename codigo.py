@@ -755,8 +755,6 @@ print(tabla)
     print("Por favor, ingresa un número válido.")
     return costo_unitario(mensaje)
 
-costo_hora_gif = 3.17
-
 print("\nProducto 1")
 
 print("\nCosto")
