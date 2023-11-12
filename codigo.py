@@ -747,3 +747,219 @@ tabla = tabulate(datos_presupuesto_gastos_operacion, headers=["Producto", "1er. 
 # Mostrar la tabla
 print("Presupuesto de Gastos de Operacion")
 print(tabla)
+ def costo_unitario(mensaje):
+  try:
+     dato = float(input(mensaje))
+     return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return costo_unitario(mensaje)
+
+costo_hora_gif = 3.17
+
+print("\nProducto 1")
+
+print("\nCosto")
+material_a_costo= float(input("\nIngresa el costo del material A: "))
+material_b_costo=float(input("\nIngresa el costo  del material B: "))
+material_c_costo=float(input("\nIngresa el costo  del material C: "))
+mano_obra_costo= float(input("\nIngresa el costo de la mano de obra: "))
+#Gastos_costo = costo_hora_gif
+
+print("\nCantidad")
+material_a_cantidad=float(input("\nIngresa la cantidad del material A: "))
+material_b_cantidad =float(input("\nIngresa la cantidad  del material B: "))
+material_c_cantidad =float(input("\nIngresa la cantidad  del material C: "))
+mano_obra_cantidad =float(input("\nIngresa la cantidad de la mano de obra: "))
+# Gastos_cantidad = mano_obra_cantidad
+
+#Calcular el Costo Unitario
+costo_unitario_a= (material_a_costo*material_a_cantidad)
+costo_unitario_b=(material_b_costo*material_b_cantidad)
+costo_unitario_c=(material_c_costo*material_c_cantidad)
+costo_unitario_obra = (mano_obra_costo*mano_obra_cantidad)
+costo_unitario_gastos = (costo_hora_gif*mano_obra_cantidad)
+
+costo_unitario_total = (costo_unitario_a + costo_unitario_b + costo_unitario_c + costo_unitario_obra + costo_unitario_gastos )
+print(costo_unitario_total)
+
+print("\nProducto 2")
+
+#Se pasa igual el Costo
+material_a2_costo= material_a_costo
+material_b2_costo = material_b_costo
+material_c2_costo = material_c_costo
+mano_obra2_costo = mano_obra_costo
+#Gastos2_costo = costo_hora_gif
+
+print("\nCantidad")
+material_a2_cantidad= float(input("\nIngresa la cantidad del material A: "))
+material_b2_cantidad = float(input("\nIngresa la cantidad  del material B: "))
+material_c2_cantidad =float(input("\nIngresa la cantidad  del material C: "))
+mano_obra2_cantidad =float(input("\nIngresa la cantidad de la mano de obra: "))
+# Gastos2_cantidad = mano_obra_cantidad
+
+#Calcular Costo Unitario
+costo_unitario_a2=(material_a2_costo*material_a2_cantidad)
+costo_unitario_b2=(material_b2_costo*material_b2_cantidad)
+costo_unitario_c2=(material_c2_costo*material_c2_cantidad)
+costo_unitario_obra2 = (mano_obra2_costo*mano_obra2_cantidad)
+costo_unitario_gastos2 = (costo_hora_gif*mano_obra2_cantidad)
+costo_unitario_total2 = (costo_unitario_a2 + costo_unitario_b2 + costo_unitario_c2 + costo_unitario_obra2 + costo_unitario_gastos2 )
+print(costo_unitario_total2)
+
+print('\nProducto 3')
+
+#Costo igual
+material_a3_costo= material_a_costo
+material_b3_costo = material_b_costo
+material_c3_costo = material_c_costo
+mano_obra3_costo = mano_obra_costo
+#Gastos2_costo = costo_hora_gif
+
+print('\nCantidad')
+material_a3_cantidad= float(input("\nIngresa la cantidad del material A: "))
+material_b3_cantidad = float(input("\nIngresa la cantidad  del material B: "))
+material_c3_cantidad =float(input("\nIngresa la cantidad  del material C: "))
+mano_obra3_cantidad =float(input("\nIngresa la cantidad de la mano de obra: "))
+# Gastos2_cantidad = mano_obra_cantidad
+
+#Calcular Costos Unitarios
+costo_unitario_a3=(material_a3_costo*material_a3_cantidad)
+costo_unitario_b3=(material_b3_costo*material_b3_cantidad)
+costo_unitario_c3=(material_c3_costo*material_c3_cantidad)
+costo_unitario_obra3 = (mano_obra3_costo*mano_obra3_cantidad)
+costo_unitario_gastos3 = (costo_hora_gif*mano_obra3_cantidad)
+costo_unitario_total3 = (costo_unitario_a3 + costo_unitario_b3 + costo_unitario_c3 + costo_unitario_obra3 + costo_unitario_gastos3 )
+print(costo_unitario_total3)
+
+from tabulate import tabulate
+total_costo_unitario = [
+  ["Material A",material_a_costo,material_a_cantidad,costo_unitario_a],
+  ["Material B",material_b_costo,material_b_cantidad,costo_unitario_b ],
+  ["Matreial C",material_c_costo,material_c_cantidad,costo_unitario_c ],
+  ["Mano de obra ",mano_obra_costo,mano_obra_cantidad,costo_unitario_obra ],
+  ["Gastos Indirectos de Fabricacion",costo_hora_gif,mano_obra_cantidad,costo_unitario_gastos],
+  ["Costo Unitario", costo_unitario_total],
+  ["Material A",material_a2_costo,material_a2_cantidad,costo_unitario_a2],
+  ["Material B",material_b2_costo,material_b2_cantidad,costo_unitario_b2],
+  [ "Matreial C",material_c2_costo,material_c2_cantidad,costo_unitario_c2 ],
+  ["Mano de obra ", mano_obra2_costo,mano_obra2_cantidad,costo_unitario_obra2],
+  ["Gastos Indirectos de Fabricacion",costo_hora_gif,mano_obra2_cantidad,costo_unitario_gastos2],
+  ["Costo Unitario",costo_unitario_total2],
+  ["Material A",material_a3_costo,material_a3_cantidad,costo_unitario_a3],
+  ["Material B",material_b3_costo,material_b3_cantidad,costo_unitario_b3  ],
+  ["Matreial C",material_c3_costo,material_c3_cantidad,costo_unitario_c3 ],
+  ["Mano de obra ", mano_obra3_costo,mano_obra3_cantidad,costo_unitario_obra3],
+  ["Gastos Indirectos de Fabricacion", costo_hora_gif,mano_obra3_cantidad,costo_unitario_gastos3],
+  ["Costo Unitario",costo_unitario_total3 ],
+]
+print("Determinacion del Costo Unitario de Productos Terminados")
+tabla =(tabulate(total_costo_unitario, headers=["Producto", "Costo", "Cantidad", "Costo unitario Total"], tablefmt="pipe"))
+print (tabla)
+
+#Tabla 11:Validacion de inventarios Finales
+def inventarios_finales(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return inventarios_finales(mensaje)
+
+print("\nInventario Final de Materiales")
+print('Unidades')
+material_a_unidades= float(input("\nIngresa las unidades del material A: "))
+material_b_unidades=float(input("\nIngresa las unidades  del material B: "))
+material_c_unidades=float(input("\nIngresa las unidades  del material C: "))
+
+print('Costos Unitario')
+material_a_unitario= material_a_costo
+material_b_unitario= material_b_costo
+material_c_unitario= material_c_costo
+
+print('Costo Total')
+costo_unitario_ta=(material_a_unidades*material_a_unitario)
+costo_unitario_tb=(material_b_unidades*material_b_unitario)
+costo_unitario_tc=(material_c_unidades*material_c_unitario)
+
+invent_final = (costo_unitario_ta+costo_unitario_tb+costo_unitario_tc)
+print(invent_final)
+
+
+print('\nInventario Final de Productos terminados')
+print('Unidades')
+material_1_unidades= float(input("\nIngresa las unidades del producto 1: "))
+material_2_unidades=float(input("\nIngresa las unidades  del producto 2: "))
+material_3_unidades=float(input("\nIngresa las unidades  del producto 3: "))
+
+#Costo Total
+costo_unitario_t1=(material_1_unidades*costo_unitario_total)
+costo_unitario_t2=(material_2_unidades*costo_unitario_total2)
+costo_unitario_t3=(material_3_unidades*costo_unitario_total3)
+
+
+total_de_costos=(costo_unitario_t1+costo_unitario_t2+costo_unitario_t3)
+print(total_de_costos)
+
+
+from tabulate import tabulate
+total_costo_unitario1= [
+  ["Material A",material_a_unidades,material_a_unitario,costo_unitario_ta],
+  ["Material B",material_b_unidades,material_b_unitario,costo_unitario_tb],
+  ["Matreial C",material_c_unidades,material_c_unitario,costo_unitario_tc ],
+  ["Inventario Final de Materiales ",invent_final],
+
+]
+
+total_costo_unitario2 = [
+  ["Producto 1",material_1_unidades,costo_unitario_total,costo_unitario_t1],
+  ["Producto 2",material_2_unidades,costo_unitario_total2,costo_unitario_t2],
+  ["Producto 3",material_3_unidades,costo_unitario_total3,costo_unitario_t3 ],
+  ["Inventario Final de Productos Terminados ",total_de_costos],
+
+]
+print(tabulate(total_costo_unitario1, headers=["Descripcion", "Unidades", "Costo Unitario", "Costo Total"], tablefmt="pipe"))
+print(tabulate(total_costo_unitario2, headers=["Descripcion", "Unidades", "Costo Unitario", "Costo Total"], tablefmt="pipe"))
+
+#Tabla 12 Estado de Costo de Producción y Ventas:
+def estado_costo_ventas(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return estado_costo_ventas(mensaje)
+
+print('\nEstado de Costo de Producción y Ventas:')
+
+saldo_inicial= float(input("\nIngrese el saldo inical de materiales: "))
+material_disponible =(saldo_inicial + com_total_3)
+materiales_utilizados = (material_disponible - invent_final )
+costo_produccion = (materiales_utilizados + total_mod_año+ total_gif3)
+inventario_i=float(input("\nInventario Inicial de Productos Terminados:"))
+total_produccion = (costo_produccion+inventario_i)
+costo_ventas_fin=(total_produccion-total_de_costos)
+print(costo_ventas_fin)
+
+
+Estado_Costo_P_V = [
+  ["Saldo Inicial de Materiales",saldo_inicial],
+  ["Compras de Materiales",com_total_3],
+  ["Material disponible",material_disponible ],
+  ["Inventario Final de Materiales ",invent_final],
+  ["Materiales utilizados ",materiales_utilizados],
+  ["Mano de Obra directa",total_mod_año],
+  ["Gastos Indirectos de Fabricacion ",total_gif3],
+  ["Costos de Produccion",costo_produccion],
+  [" Inventario Inicial de Productos Terminados ",inventario_i],
+  ["Total de Producción Disponible",total_produccion],
+  ["Inventario Final de Productos Terminados ",total_de_costos],
+  [" Costo de Ventas",costo_ventas_fin],
+]
+print(tabulate(Estado_Costo_P_V, headers=["Estado de Costo de Producción y Ventas"], tablefmt="pipe"))
+
+
+
+
+
