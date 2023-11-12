@@ -747,7 +747,9 @@ tabla = tabulate(datos_presupuesto_gastos_operacion, headers=["Producto", "1er. 
 # Mostrar la tabla
 print("Presupuesto de Gastos de Operacion")
 print(tabla)
- def costo_unitario(mensaje):
+
+#Tabla 10
+def costo_unitario(mensaje):
   try:
      dato = float(input(mensaje))
      return dato
