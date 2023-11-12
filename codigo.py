@@ -71,7 +71,15 @@ print(tabla)
 
 
 # Tabla 2: Saldo de Clientes y Flujo de Entradas
-def saldo_clientes():
+def saldo_clientes(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return presupuesto_ventas(mensaje)
+    
+    
     saldo_clientes_31_dic_2022 = float(input("Ingrese el saldo de clientes al 31 de diciembre de 2022: "))
     ventas_2023 = presupuesto_ventas()
 
@@ -82,8 +90,6 @@ def saldo_clientes():
     total_entradas = por_cobranza_2022 + por_cobranza_2023
 
     saldo_clientes_2023 = total_clientes_2023 - total_entradas
-
-    return saldo_clientes_31_dic_2022, ventas_2023, total_clientes_2023, por_cobranza_2022, por_cobranza_2023, total_entradas, saldo_clientes_2023
 # Crear una lista de listas con los datos del presupuesto de requerimiento de materiales
 datos_saldo_clientes= [
     ["Saldo de clientes 31-DIC-2022", "", saldo_clientes_31_dic_2022],
@@ -103,7 +109,13 @@ print("Saldo de Clientes")
 print(tabla)
 
 # Tabla 3: Presupuesto de Producción
-def presupuesto_produccion():
+def presupuesto_produccion(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return presupuesto_produccion(mensaje)
     #producto 1
     produccion_unidades_1erp1ersem = int(input("Ingrese la cantidad de unidades a producir del 1er producto en el primer semestre : "))
     inventario_final_deseado_1erp1ersem = int(input("Ingrese el inventario final deseado del 1er producto en el primer semestre : "))
