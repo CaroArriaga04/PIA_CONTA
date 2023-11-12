@@ -940,7 +940,6 @@ costo_produccion = (materiales_utilizados + total_mod_año+ total_gif3)
 inventario_i=float(input("\nInventario Inicial de Productos Terminados:"))
 total_produccion = (costo_produccion+inventario_i)
 costo_ventas_fin=(total_produccion-total_de_costos)
-print(costo_ventas_fin)
 
 
 Estado_Costo_P_V = [
@@ -957,7 +956,7 @@ Estado_Costo_P_V = [
   ["Inventario Final de Productos Terminados ",total_de_costos],
   [" Costo de Ventas",costo_ventas_fin],
 ]
-print(tabulate(Estado_Costo_P_V, headers=["Estado de Costo de Producción y Ventas"], tablefmt="pipe"))
+print(tabulate(Estado_Costo_P_V, headers=["Presupuesto del X al X de 20XX"], tablefmt="pipe"))
 
 
 
