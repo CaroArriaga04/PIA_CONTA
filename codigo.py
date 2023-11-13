@@ -116,7 +116,7 @@ def presupuesto_produccion(mensaje):
     print("Por favor, ingresa un número válido.")
     return presupuesto_produccion(mensaje)
   
-#producto 1
+print("\nPRODUCTO 1")
 produccion_unidades_1erp1ersem = int(input("Ingrese la cantidad de unidades a producir del 1er producto en el primer semestre : "))
 inventario_final_deseado_1erp1ersem = int(input("Ingrese el inventario final deseado del 1er producto en el primer semestre : "))
 total_unidades_1erp1ersem = produccion_unidades_1erp1ersem + inventario_final_deseado_1erp1ersem
@@ -131,7 +131,7 @@ unidades_requeridas_1erp2dosem = produccion_unidades_1erp2dosem + inventario_fin
 total_unidades_producir_1erp = unidades_requeridas_1erp1ersem + unidades_requeridas_1erp2dosem
 total_unidades_1erp = total_unidades_1erp1ersem + total_unidades_1erp2dosem
 
-# producto 2
+print("\nPRODUCTO 2")
 produccion_unidades_2dop1ersem = int(input("Ingrese la cantidad de unidades a producir del 2do producto en el primer semestre : "))
 inventario_final_deseado_2dop1ersem = int(input("Ingrese el inventario final deseado del 2do producto en el primer semestre : "))
 total_unidades_2dop1ersem = produccion_unidades_2dop1ersem + inventario_final_deseado_2dop1ersem
@@ -146,7 +146,7 @@ unidades_requeridas_2dop2dosem = produccion_unidades_2dop2dosem + inventario_fin
 total_unidades_producir_2dop = unidades_requeridas_2dop1ersem + unidades_requeridas_2dop2dosem
 total_unidades_2dop = total_unidades_2dop1ersem + total_unidades_2dop2dosem
 
-#producto 3
+print("\nPRODUCTO 3")
 produccion_unidades_3erp1ersem = int(input("Ingrese la cantidad de unidades a producir del 3er producto en el primer semestre : "))
 inventario_final_deseado_3erp1ersem = int(input("Ingrese el inventario final deseado del 3er producto en el primer semestre : "))
 total_unidades_3erp1ersem = produccion_unidades_3erp1ersem + inventario_final_deseado_3erp1ersem
