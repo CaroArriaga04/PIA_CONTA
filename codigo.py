@@ -80,7 +80,7 @@ def saldo_clientes(mensaje):
     return presupuesto_ventas(mensaje)
     
 saldo_clientes_31_dic_2022 = float(input("Ingrese el saldo de clientes al 31 de diciembre de 2022: "))
-ventas_2023 = total_ventas_3erp2sem
+ventas_2023 = total_ventas_año
 
 total_clientes_2023 = saldo_clientes_31_dic_2022 + total_ventas_año
 
