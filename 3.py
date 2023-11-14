@@ -19,10 +19,11 @@ produccion_unidades_1erp2dosem = int(input("Ingrese la cantidad de unidades a pr
 inventario_final_deseado_1erp2dosem = int(input("Ingrese el inventario final deseado del 1er producto en el segundo semestre : "))
 total_unidades_1erp2dosem = produccion_unidades_1erp2dosem + inventario_final_deseado_1erp2dosem
 inventario_inicial_1erp2dosem = int(input("Ingrese el inventario inicial del 1er producto en el segundo semestre : "))
-
 unidades_requeridas_1erp2dosem = produccion_unidades_1erp2dosem + inventario_final_deseado_1erp2dosem - inventario_inicial_1erp2dosem
-total_unidades_producir_1erp = unidades_requeridas_1erp1ersem + inventario_inicial_1erp2dosem
-total_unidades_1erp = total_unidades_producir_1erp + inventario_final_deseado_1erp2dosem
+
+total_unidades_vender_1erp = produccion_unidades_1erp1ersem + produccion_unidades_1erp2dosem
+total_inventario_unidades_1erp = total_unidades_vender_1erp + inventario_final_deseado_1erp2dosem
+total_unidades_producir_1erp = total_inventario_unidades_1erp - inventario_inicial_1erp2dosem
 
 print("\nPRODUCTO 2")
 produccion_unidades_2dop1ersem = int(input("Ingrese la cantidad de unidades a producir del 2do producto en el primer semestre : "))
@@ -36,8 +37,10 @@ inventario_final_deseado_2dop2dosem = int(input("Ingrese el inventario final des
 total_unidades_2dop2dosem = produccion_unidades_2dop2dosem + inventario_final_deseado_2dop2dosem
 inventario_inicial_2dop2dosem = int(input("Ingrese el inventario inicial del 2do producto en el segundo semestre : "))
 unidades_requeridas_2dop2dosem = produccion_unidades_2dop2dosem + inventario_final_deseado_2dop2dosem - inventario_inicial_2dop2dosem
-total_unidades_producir_2dop = unidades_requeridas_2dop1ersem + inventario_inicial_2dop2dosem
-total_unidades_2dop = total_unidades_producir_2dop + inventario_final_deseado_2dop2dosem
+
+total_unidades_vender_2dop = produccion_unidades_2dop1ersem + produccion_unidades_2dop2dosem
+total_inventario_unidades_2dop = total_unidades_vender_2dop + inventario_final_deseado_2dop2dosem
+total_unidades_producir_2dop = total_inventario_unidades_2dop - inventario_inicial_2dop2dosem
 
 print("\nPRODUCTO 3")
 produccion_unidades_3erp1ersem = int(input("Ingrese la cantidad de unidades a producir del 3er producto en el primer semestre : "))
@@ -51,32 +54,34 @@ inventario_final_deseado_3erp2dosem = int(input("Ingrese el inventario final des
 total_unidades_3erp2dosem = produccion_unidades_3erp2dosem + inventario_final_deseado_3erp2dosem
 inventario_inicial_3erp2dosem = int(input("Ingrese el inventario inicial del 3er producto en el segundo semestre : "))
 unidades_requeridas_3erp2dosem = produccion_unidades_3erp2dosem + inventario_final_deseado_3erp2dosem - inventario_inicial_3erp2dosem
-total_unidades_producir_3erp = unidades_requeridas_3erp1ersem + inventario_inicial_3erp2dosem
-total_unidades_3erp = total_unidades_producir_3erp + inventario_final_deseado_3erp2dosem
+
+total_unidades_vender_3erp = produccion_unidades_3erp1ersem + produccion_unidades_3erp2dosem
+total_inventario_unidades_3erp = total_unidades_vender_3erp + inventario_final_deseado_3erp2dosem
+total_unidades_producir_3erp = total_inventario_unidades_3erp - inventario_inicial_3erp2dosem
 
 
 # Crear una lista de listas con los datos del presupuesto de requerimiento de materiales
 datos_presupuesto_produccion= [
     ["PRODUCTO 1", "", "", ""],
-    ["Unidades a vender", produccion_unidades_1erp1ersem, produccion_unidades_1erp2dosem , total_unidades_producir_1erp],
+    ["Unidades a vender", produccion_unidades_1erp1ersem, produccion_unidades_1erp2dosem , total_unidades_vender_1erp],
     ["Inventario Final", inventario_final_deseado_1erp1ersem , inventario_final_deseado_1erp2dosem , inventario_final_deseado_1erp2dosem],
-    ["Total de unidades", total_unidades_1erp1ersem , total_unidades_1erp2dosem , total_unidades_1erp],
+    ["Total de unidades", total_unidades_1erp1ersem , total_unidades_1erp2dosem , total_inventario_unidades_1erp],
     ["Inventario Inicial", inventario_inicial_1erp1ersem , inventario_inicial_1erp2dosem , inventario_inicial_1erp2dosem],
-    ["Unidades a Produccir", unidades_requeridas_1erp1ersem , unidades_requeridas_1erp2dosem , total_unidades_1erp],
+    ["Unidades a Produccir", unidades_requeridas_1erp1ersem , unidades_requeridas_1erp2dosem , total_unidades_producir_1erp],
     
     ["PRODUCTO 2", "", "", ""],
-    ["Unidades a vender", produccion_unidades_2dop1ersem, produccion_unidades_2dop2dosem , total_unidades_producir_2dop],
+    ["Unidades a vender", produccion_unidades_2dop1ersem, produccion_unidades_2dop2dosem , total_unidades_vender_2dop],
     ["Inventario Final", inventario_final_deseado_2dop1ersem , inventario_final_deseado_2dop2dosem , inventario_final_deseado_2dop2dosem],
-    ["Total de unidades", total_unidades_2dop1ersem , total_unidades_2dop2dosem , total_unidades_2dop],
+    ["Total de unidades", total_unidades_2dop1ersem , total_unidades_2dop2dosem , total_inventario_unidades_2dop],
     ["Inventario Inicial", inventario_inicial_2dop1ersem , inventario_inicial_2dop2dosem , inventario_inicial_2dop2dosem],
-    ["Unidades a Produccir", unidades_requeridas_2dop1ersem , unidades_requeridas_2dop2dosem , total_unidades_2dop],
+    ["Unidades a Produccir", unidades_requeridas_2dop1ersem , unidades_requeridas_2dop2dosem , total_unidades_producir_2dop],
     
     ["PRODUCTO 3", "", "", ""],
-    ["Unidades a vender", produccion_unidades_3erp1ersem, produccion_unidades_3erp2dosem , total_unidades_producir_3erp],
+    ["Unidades a vender", produccion_unidades_3erp1ersem, produccion_unidades_3erp2dosem , total_unidades_vender_3erp],
     ["Inventario Final", inventario_final_deseado_3erp1ersem , inventario_final_deseado_3erp2dosem , inventario_final_deseado_3erp2dosem],
-    ["Total de unidades", total_unidades_3erp1ersem , total_unidades_3erp2dosem , total_unidades_3erp],
+    ["Total de unidades", total_unidades_3erp1ersem , total_unidades_3erp2dosem , total_inventario_unidades_3erp],
     ["Inventario Inicial", inventario_inicial_3erp1ersem , inventario_inicial_3erp2dosem , inventario_inicial_3erp2dosem],
-    ["Unidades a Produccir", unidades_requeridas_3erp1ersem , unidades_requeridas_3erp2dosem , total_unidades_3erp]
+    ["Unidades a Produccir", unidades_requeridas_3erp1ersem , unidades_requeridas_3erp2dosem , total_unidades_producir_3erp]
 ]
 
 # Impresion de datos de presupuesto de requerimiento de materiales - Tabla 3
