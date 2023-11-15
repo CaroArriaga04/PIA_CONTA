@@ -49,7 +49,7 @@ total_ventas_año = total_ventas_1sem + total_ventas_2sem
 # Crear una lista de listas con los datos del presupuesto de requerimiento de materiales
 datos_presupuesto_ventas= [
     ["PRODUCTO 1", "", "", ""],
-    ["Unidades a vender", unidades_vender_1erp1sem, unidades_vender_2dop1sem , ""],
+    ["Unidades a vender", unidades_vender_1erp1sem, unidades_vender_1erp2sem , ""],
     ["Precio de venta", precio_venta_1erp1sem , precio_venta_1erp2sem , ""],
     ["Importe de venta", total_ventas_1erp1sem , total_ventas_1erp2sem , total_ventas_1p],
     ["PRODUCTO 2", "", "", ""],
@@ -127,8 +127,9 @@ produccion_unidades_1erp2dosem = int(input("Ingrese la cantidad de unidades a pr
 inventario_final_deseado_1erp2dosem = int(input("Ingrese el inventario final deseado del 1er producto en el segundo semestre : "))
 total_unidades_1erp2dosem = produccion_unidades_1erp2dosem + inventario_final_deseado_1erp2dosem
 inventario_inicial_1erp2dosem = int(input("Ingrese el inventario inicial del 1er producto en el segundo semestre : "))
+
 unidades_requeridas_1erp2dosem = produccion_unidades_1erp2dosem + inventario_final_deseado_1erp2dosem - inventario_inicial_1erp2dosem
-total_unidades_producir_1erp = unidades_requeridas_1erp1ersem + unidades_requeridas_1erp2dosem
+total_unidades_producir_1erp = unidades_requeridas_1erp1ersem + inventario_inicial_1erp2dosem
 total_unidades_1erp = total_unidades_1erp1ersem + total_unidades_1erp2dosem
 
 print("\nPRODUCTO 2")
