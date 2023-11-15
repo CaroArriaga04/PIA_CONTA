@@ -127,5 +127,72 @@ estado_de_flujo_efectivo=[
 ]
 
 
-#Tabla 15
+#Tabla 15 balance general
+def balance_general(mensaje):
+  try:
+    dato = float(input(mensaje))
+    return dato
+  except ValueError:
+    print("Por favor, ingresa un número válido.")
+    return inventarios_finales(mensaje)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+balance_general=[
+    ["\n "],
+    ["ACTIVO"],
+    ["Circulante"],
+    ["Efectivo: "],
+    ["Clientes: "],
+    ["Inventario de materiales: "],
+    ["Inventario de producto terminado: "],
+    ["Total de activos circulantes: "],
+
+    ["No Criculante"],
+    ["Terreno: "],
+    ["Planta y equipo: "],
+    ["Depreciacion acumulada:  "],
+    ["Total activos no circulante "],
+
+    
+    ["ACTIVO TOTAL: "],
+
+    ["PASIVO: "],
+    ["Corto plazo: "],
+    ["Proveeedores: "],
+    ["Documentos por pagar: "],
+    ["ISR por pagar: "],
+    ["PTU por pagar: "],
+    ["Total de Pasivo Corto Plazo:"]
+
+    ["Largo plazo"],
+    ["Préstamos bancarios"],
+    ["Total de Pasivo Largo Plazo: "],
+
+
+    ["PASIVO TOTAL"],
+
+    ["CAPITAL CONTABLE"],
+    ["Capital aportado"],
+    ["Capital ganado"],
+    ["Utilidad del ejercicio"],
+    ["Total de Capital Contable"],
+
+    ["SUMA DE PASIVO Y CAPITAL"],
+]
